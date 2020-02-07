@@ -160,6 +160,12 @@
                             swal('系统错误', '', 'error');
                         }
                     })
+                    .then(function () {
+                        swal('加入购物车成功', '', 'success')
+                            .then(function() {
+                                location.href = '{{ route('cart.index') }}';
+                            });
+                    })
             });
         });
     </script>
