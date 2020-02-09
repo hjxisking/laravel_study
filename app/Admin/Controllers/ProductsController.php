@@ -28,7 +28,7 @@ class ProductsController extends AdminController
         $grid = new Grid(new Product);
 
         // 使用 with 来预加载商品类目数据，减少 SQL 查询
-        $grid->model()->with(['category']);
+        $grid->model()->where('type', Product::TYPE_NORMAL)->with(['category']);
 
         $grid->column('id', __('Id'));
         $grid->column('title', __('商品名称'));
