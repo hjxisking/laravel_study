@@ -67,7 +67,7 @@ class ProductsController extends Controller
                 'order'  => $order,
             ],
             'category' => $category ?? null,
-            'categoryTree' => $categoryService->getCategoryTree(),
+            //'categoryTree' => $categoryService->getCategoryTree(),    //使用viewComposer的话就不需要这里定义了，viewComposer是在AppServiceProvider里注册的
         ]);
     }
 
