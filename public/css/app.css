@@ -15917,6 +15917,34 @@ body {
   padding-right: 10px;
 }
 
+.orders-show-page .properties-list {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 20px;
+}
+
+.orders-show-page .properties-list .properties-list-title {
+  padding: 5px 0;
+  color: #999;
+  font-weight: 700;
+}
+
+.orders-show-page .properties-list .properties-list-body {
+  font-size: 12px;
+  padding: 5px 0;
+  list-style: none;
+  text-indent: 0;
+}
+
+.orders-show-page .properties-list .properties-list-body li {
+  display: inline-block;
+  width: 30%;
+  overflow: hidden;
+}
+
+.orders-show-page .product-description img {
+  max-width: 100%;
+}
+
 .orders-review-show-page .vertical-middle {
   vertical-align: middle;
 }
