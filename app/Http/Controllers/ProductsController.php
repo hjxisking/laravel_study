@@ -8,6 +8,7 @@ use App\Models\OrderItem;
 use App\Models\Product;
 use App\SearchBuilders\ProductSearchBuilder;
 use App\Services\CategoryService;
+use App\Services\ProductService;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 
@@ -64,7 +65,7 @@ class ProductsController extends Controller
         // 通过 whereIn 方法从数据库中读取商品数据
         $products = Product::query()
             ->whereIn('id', $productIds)
-            ->orderByRaw(sprintf("FIND_IN_SET(id, '%s')", join(',', $productIds)))
+            ->byIds($productIds)
             ->get();
         // 返回一个 LengthAwarePaginator 对象
         $pager = new LengthAwarePaginator($products, $result['hits']['total']['value'], $perPage, $page, [
@@ -101,7 +102,7 @@ class ProductsController extends Controller
         ]);
     }
 
-    public function show(Product $product, Request $request)
+    public function show(Product $product, Request $request, ProductService $productService)
     {
         // 判断商品是否已经上架，如果没有上架则抛出异常。
         if (!$product->on_sale) {
@@ -124,11 +125,19 @@ class ProductsController extends Controller
             ->limit(10) // 取出 10 条
             ->get();
 
+        $similarProductIds = $productService->getSimilarProductIds($product, 4);
+        // 根据 Elasticsearch 搜索出来的商品 ID 从数据库中读取商品数据
+        $similarProducts   = Product::query()
+            ->whereIn('id', $similarProductIds)
+            ->byIds($similarProductIds)
+            ->get();
+
         // 最后别忘了注入到模板中
         return view('products.show', [
             'product' => $product,
             'favored' => $favored,
-            'reviews' => $reviews
+            'reviews' => $reviews,
+            'similar' => $similarProducts,
         ]);
     }
 
