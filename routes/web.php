@@ -20,6 +20,8 @@ Route::get('/', 'PagesController@root')->name('root');
 //Auth::routes();
 Auth::routes(['verify' => true]);
 
+Route::post('seckill_orders', 'OrdersController@seckill')->name('seckill_orders.store');
+
 // auth 中间件代表需要登录，verified中间件代表需要经过邮箱验证
 Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::get('user_addresses', 'UserAddressesController@index')->name('user_addresses.index');
@@ -45,7 +47,6 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
 
     Route::post('crowdfunding_orders', 'OrdersController@crowdfunding')->name('crowdfunding_orders.store');
 
-    Route::post('seckill_orders', 'OrdersController@seckill')->name('seckill_orders.store');
 });
 
 Route::redirect('/', '/products')->name('root');
