@@ -20,7 +20,7 @@ Route::get('/', 'PagesController@root')->name('root');
 //Auth::routes();
 Auth::routes(['verify' => true]);
 
-Route::post('seckill_orders', 'OrdersController@seckill')->name('seckill_orders.store');
+Route::post('seckill_orders', 'OrdersController@seckill')->name('seckill_orders.store')->middleware('random_drop:1');
 
 // auth 中间件代表需要登录，verified中间件代表需要经过邮箱验证
 Route::group(['middleware' => ['auth', 'verified']], function() {
