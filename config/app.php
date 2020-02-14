@@ -178,6 +178,7 @@ return [
 
         Overtrue\LaravelLang\TranslationServiceProvider::class,
 
+        SwooleTW\Http\LaravelServiceProvider::class,
     ],
 
     /*

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "22efa5d4f080fbbbbde240de7285c619",
+    "content-hash": "4485a9e92cff18b615bf7eacd968c9ef",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -2979,6 +2979,91 @@
             "time": "2019-11-12T09:31:26+00:00"
         },
         {
+            "name": "swooletw/laravel-swoole",
+            "version": "v2.6.66",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swooletw/laravel-swoole.git",
+                "reference": "e0e4c38b1ad4520da5fd31df3eb7596b97846427"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swooletw/laravel-swoole/zipball/e0e4c38b1ad4520da5fd31df3eb7596b97846427",
+                "reference": "e0e4c38b1ad4520da5fd31df3eb7596b97846427",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "illuminate/console": "~5.4|~6.0",
+                "illuminate/contracts": "~5.4|~6.0",
+                "illuminate/http": "~5.4|~6.0",
+                "illuminate/support": "~5.4|~6.0",
+                "php": "^7.2",
+                "predis/predis": "^1.1"
+            },
+            "require-dev": {
+                "codedungeon/phpunit-result-printer": "^0.14.0",
+                "laravel/lumen-framework": "~5.4|~6.0",
+                "mockery/mockery": "~1.0",
+                "php-coveralls/php-coveralls": "^2.1",
+                "php-mock/php-mock": "^2.0",
+                "phpunit/php-code-coverage": "^6.1",
+                "phpunit/phpunit": "^7.5",
+                "swoole/ide-helper": "@dev"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "SwooleTW\\Http\\LaravelServiceProvider"
+                    ],
+                    "aliases": {
+                        "Server": "SwooleTW\\Http\\Server\\Facades\\Server",
+                        "Table": "SwooleTW\\Http\\Server\\Facades\\Table",
+                        "Room": "SwooleTW\\Http\\Websocket\\Facades\\Room",
+                        "Websocket": "SwooleTW\\Http\\Websocket\\Facades\\Websocket"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/Server/helpers.php"
+                ],
+                "psr-4": {
+                    "SwooleTW\\Http\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Albert Chen",
+                    "email": "albert@unisharp.com"
+                },
+                {
+                    "name": "Huang Yi",
+                    "email": "coodeer@163.com"
+                }
+            ],
+            "description": "High performance HTTP server based on Swoole. Speed up your Laravel and Lumen applications.",
+            "keywords": [
+                "http",
+                "laravel",
+                "lumen",
+                "performance",
+                "server",
+                "swoole"
+            ],
+            "time": "2019-12-01T08:34:33+00:00"
+        },
+        {
             "name": "symfony/console",
             "version": "v4.4.4",
             "source": {
@@ -3861,16 +3946,16 @@
         },
         {
             "name": "symfony/polyfill-intl-idn",
-            "version": "v1.13.1",
+            "version": "v1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-idn.git",
-                "reference": "6f9c239e61e1b0c9229a28ff89a812dc449c3d46"
+                "reference": "6842f1a39cf7d580655688069a03dd7cd83d244a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/6f9c239e61e1b0c9229a28ff89a812dc449c3d46",
-                "reference": "6f9c239e61e1b0c9229a28ff89a812dc449c3d46",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/6842f1a39cf7d580655688069a03dd7cd83d244a",
+                "reference": "6842f1a39cf7d580655688069a03dd7cd83d244a",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3882,7 +3967,7 @@
             "require": {
                 "php": ">=5.3.3",
                 "symfony/polyfill-mbstring": "^1.3",
-                "symfony/polyfill-php72": "^1.9"
+                "symfony/polyfill-php72": "^1.10"
             },
             "suggest": {
                 "ext-intl": "For best performance"
@@ -3890,7 +3975,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.13-dev"
+                    "dev-master": "1.14-dev"
                 }
             },
             "autoload": {
@@ -3925,20 +4010,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-11-27T13:56:44+00:00"
+            "time": "2020-01-17T12:01:36+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.13.1",
+            "version": "v1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "7b4aab9743c30be783b73de055d24a39cf4b954f"
+                "reference": "34094cfa9abe1f0f14f48f490772db7a775559f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/7b4aab9743c30be783b73de055d24a39cf4b954f",
-                "reference": "7b4aab9743c30be783b73de055d24a39cf4b954f",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/34094cfa9abe1f0f14f48f490772db7a775559f2",
+                "reference": "34094cfa9abe1f0f14f48f490772db7a775559f2",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3956,7 +4041,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.13-dev"
+                    "dev-master": "1.14-dev"
                 }
             },
             "autoload": {
@@ -3990,20 +4075,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-11-27T14:18:11+00:00"
+            "time": "2020-01-13T11:15:53+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
-            "version": "v1.13.1",
+            "version": "v1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php72.git",
-                "reference": "66fea50f6cb37a35eea048d75a7d99a45b586038"
+                "reference": "46ecacf4751dd0dc81e4f6bf01dbf9da1dc1dadf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/66fea50f6cb37a35eea048d75a7d99a45b586038",
-                "reference": "66fea50f6cb37a35eea048d75a7d99a45b586038",
+                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/46ecacf4751dd0dc81e4f6bf01dbf9da1dc1dadf",
+                "reference": "46ecacf4751dd0dc81e4f6bf01dbf9da1dc1dadf",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -4018,7 +4103,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.13-dev"
+                    "dev-master": "1.14-dev"
                 }
             },
             "autoload": {
@@ -4051,20 +4136,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-11-27T13:56:44+00:00"
+            "time": "2020-01-13T11:15:53+00:00"
         },
         {
             "name": "symfony/polyfill-php73",
-            "version": "v1.13.1",
+            "version": "v1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php73.git",
-                "reference": "4b0e2222c55a25b4541305a053013d5647d3a25f"
+                "reference": "5e66a0fa1070bf46bec4bea7962d285108edd675"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/4b0e2222c55a25b4541305a053013d5647d3a25f",
-                "reference": "4b0e2222c55a25b4541305a053013d5647d3a25f",
+                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/5e66a0fa1070bf46bec4bea7962d285108edd675",
+                "reference": "5e66a0fa1070bf46bec4bea7962d285108edd675",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -4079,7 +4164,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.13-dev"
+                    "dev-master": "1.14-dev"
                 }
             },
             "autoload": {
@@ -4115,7 +4200,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-11-27T16:25:15+00:00"
+            "time": "2020-01-13T11:15:53+00:00"
         },
         {
             "name": "symfony/process",
@@ -4845,193 +4930,6 @@
                 "instantiate"
             ],
             "time": "2019-10-21T16:45:58+00:00"
-        },
-        {
-            "name": "facade/flare-client-php",
-            "version": "1.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/facade/flare-client-php.git",
-                "reference": "24444ea0e1556f0a4b5fc8e61802caf72ae9a408"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/facade/flare-client-php/zipball/24444ea0e1556f0a4b5fc8e61802caf72ae9a408",
-                "reference": "24444ea0e1556f0a4b5fc8e61802caf72ae9a408",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "facade/ignition-contracts": "~1.0",
-                "illuminate/pipeline": "~5.5|~5.6|~5.7|~5.8|^6.0",
-                "php": "^7.1",
-                "symfony/http-foundation": "~3.3|~4.1",
-                "symfony/var-dumper": "^3.4|^4.0|^5.0"
-            },
-            "require-dev": {
-                "larapack/dd": "^1.1",
-                "phpunit/phpunit": "^7.5.16",
-                "spatie/phpunit-snapshot-assertions": "^2.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Facade\\FlareClient\\": "src"
-                },
-                "files": [
-                    "src/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Send PHP errors to Flare",
-            "homepage": "https://github.com/facade/flare-client-php",
-            "keywords": [
-                "exception",
-                "facade",
-                "flare",
-                "reporting"
-            ],
-            "time": "2019-12-15T18:28:38+00:00"
-        },
-        {
-            "name": "facade/ignition",
-            "version": "1.16.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/facade/ignition.git",
-                "reference": "37f094775814b68d0c6cc8b8ff3c3be243f20725"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/37f094775814b68d0c6cc8b8ff3c3be243f20725",
-                "reference": "37f094775814b68d0c6cc8b8ff3c3be243f20725",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "ext-json": "*",
-                "ext-mbstring": "*",
-                "facade/flare-client-php": "^1.3",
-                "facade/ignition-contracts": "^1.0",
-                "filp/whoops": "^2.4",
-                "illuminate/support": "~5.5.0 || ~5.6.0 || ~5.7.0 || ~5.8.0 || ^6.0",
-                "monolog/monolog": "^1.12 || ^2.0",
-                "php": "^7.1",
-                "scrivo/highlight.php": "^9.15",
-                "symfony/console": "^3.4 || ^4.0",
-                "symfony/var-dumper": "^3.4 || ^4.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.14",
-                "mockery/mockery": "^1.2",
-                "orchestra/testbench": "^3.5 || ^3.6 || ^3.7 || ^3.8 || ^4.0"
-            },
-            "suggest": {
-                "laravel/telescope": "^2.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "v2.x-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Facade\\Ignition\\IgnitionServiceProvider"
-                    ],
-                    "aliases": {
-                        "Flare": "Facade\\Ignition\\Facades\\Flare"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Facade\\Ignition\\": "src"
-                },
-                "files": [
-                    "src/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A beautiful error page for Laravel applications.",
-            "homepage": "https://github.com/facade/ignition",
-            "keywords": [
-                "error",
-                "flare",
-                "laravel",
-                "page"
-            ],
-            "time": "2020-01-21T17:46:02+00:00"
-        },
-        {
-            "name": "facade/ignition-contracts",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/facade/ignition-contracts.git",
-                "reference": "f445db0fb86f48e205787b2592840dd9c80ded28"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition-contracts/zipball/f445db0fb86f48e205787b2592840dd9c80ded28",
-                "reference": "f445db0fb86f48e205787b2592840dd9c80ded28",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "php": "^7.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Facade\\IgnitionContracts\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://flareapp.io",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Solution contracts for Ignition",
-            "homepage": "https://github.com/facade/ignition-contracts",
-            "keywords": [
-                "contracts",
-                "flare",
-                "ignition"
-            ],
-            "time": "2019-08-30T14:06:08+00:00"
         },
         {
             "name": "filp/whoops",
@@ -6190,80 +6088,6 @@
                 "xunit"
             ],
             "time": "2020-01-08T08:49:49+00:00"
-        },
-        {
-            "name": "scrivo/highlight.php",
-            "version": "v9.18.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/scrivo/highlight.php.git",
-                "reference": "a57c858cb753f543965a1e17af386a648012ed8f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/a57c858cb753f543965a1e17af386a648012ed8f",
-                "reference": "a57c858cb753f543965a1e17af386a648012ed8f",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "ext-json": "*",
-                "ext-mbstring": "*",
-                "php": ">=5.4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8|^5.7",
-                "symfony/finder": "^2.8|^3.4",
-                "symfony/var-dumper": "^2.8|^3.4"
-            },
-            "suggest": {
-                "ext-dom": "Needed to make use of the features in the utilities namespace"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Highlight\\": "",
-                    "HighlightUtilities\\": ""
-                },
-                "files": [
-                    "HighlightUtilities/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Geert Bergman",
-                    "homepage": "http://www.scrivo.org/",
-                    "role": "Project Author"
-                },
-                {
-                    "name": "Vladimir Jimenez",
-                    "homepage": "https://allejo.io",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Martin Folkers",
-                    "homepage": "https://twobrain.io",
-                    "role": "Contributor"
-                }
-            ],
-            "description": "Server side syntax highlighter that supports 185 languages. It's a PHP port of highlight.js",
-            "keywords": [
-                "code",
-                "highlight",
-                "highlight.js",
-                "highlight.php",
-                "syntax"
-            ],
-            "time": "2020-02-03T02:19:36+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

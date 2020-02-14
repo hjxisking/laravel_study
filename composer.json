@@ -17,10 +17,10 @@
         "laravel/horizon": "^3.6",
         "laravel/tinker": "^2.0",
         "overtrue/laravel-lang": "^3.0",
+        "swooletw/laravel-swoole": "^2.6",
         "yansongda/pay": "^2.8"
     },
     "require-dev": {
-        "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.4",
         "laravel/ui": "^1.1",
         "mockery/mockery": "^1.0",
